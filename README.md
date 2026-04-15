@@ -21,17 +21,20 @@
 手刻 `generate` 迴圈，實作 Softmax 函數並引入溫度參數 $T$，精確控制機率分佈。
 
 ![LLM 推論運作流程圖](images/image2.png)
+
 *【圖說】：實作底層推論流程。模型將輸入 Token 轉換為 Logits 後，經過 Softmax 轉換為機率分佈。*
 
 ![Softmax 數學公式](images/image8.png)
 
 ![Temperature 實驗數據分析](images/image7.png)
+
 *【圖說】：Temperature 實驗數據。$T \to 0$ 時機率集中於最高項（Greedy）；$T$ 升高時分佈平滑化，增加隨機性。*
 
 ### 3.2 自適應濾波器 (Sampling Filters)
 實作 Top-K、Top-P 及最具適應性的 **Min-P** 演算法。
 
 ![採樣過濾器對比結果](images/image1.png)
+
 *【圖說】：對比不同分布下的過濾效果，驗證各採樣策略對 Token 選擇的影響。*
 
 ---
@@ -42,6 +45,7 @@
 實作 Repetition / Frequency / Presence Penalty，解決 LLM 無限重複迴圈。
 
 ![Penalty 懲罰機制實驗數據](images/image3.png)
+
 *【圖說】：透過 Penalty 壓低重複 Token 權重，引導模型轉換詞彙。*
 
 ### 4.2 案例分析：高隨機性下的語言修復
@@ -49,6 +53,7 @@
 **對策**：結合 Top-P 採樣策略，成功恢復邏輯軌道。
 
 ![語言漂移與修復對比](images/image9.png)
+
 *【圖說】：故障排除實錄。透過加入 Penalty 與 Sampling Filter，成功讓模型在亂碼後恢復正常中文回應。*
 
 ---
@@ -57,9 +62,11 @@
 身為具備教育背景的開發者，我關注技術對「使用者感受」的影響。在「貓咪 Rap」實驗中，透過三種參數策略驗證了如何精確配置模型參數。
 
 ![進階策略設計與要求](images/image4.png)
+
 *【圖說】：設計三種不同風格的生成策略，追求技術穩定與文創表達的平衡。*
 
 ![模型最終生成成果](images/image6.png)
+
 *【圖說】：最終生成成果展示，展現模型在調優後的流暢對話能力。*
 
 ---

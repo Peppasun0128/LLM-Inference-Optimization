@@ -11,6 +11,7 @@
 * **開發工具**: VS Code Remote-SSH (Linux Server) 遠端運算。
 
 ![Docker 環境安裝與啟動](images/image5.png)
+
 *【圖說】：展示使用 Docker 進行環境隔離與環境安裝，確保推論環境的一致性。*
 
 ---
